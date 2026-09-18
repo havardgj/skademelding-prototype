@@ -1,4 +1,6 @@
 import { Flex, Box, Text } from '@gjensidige/builders-components'
+import { GjensidigePrimary } from '@gjensidige/builders-icons/logos'
+import { ChevronDown, Person, ReportClaim } from '@gjensidige/builders-icons'
 
 const globalTabs = ['Privat', 'Bedrift', 'Landbruk']
 const secondLevelLinks = [
@@ -15,17 +17,28 @@ export function TopNav() {
     <Flex layout={1} gap="none">
       <Box variant="darkblue" padding="md">
         <Flex direction="row" gap="lg" align="center" justify="space-between">
-          <Flex direction="row" gap="lg" align="center">
-            <Text weight="700">Gjensidige</Text>
-            {globalTabs.map((tab) => (
-              <Text key={tab} size="small">
-                {tab}
-              </Text>
-            ))}
+          <Flex direction="row" gap="xl" align="center">
+            <GjensidigePrimary
+              style={{ height: 'var(--builders-unit-30)', width: 'auto' }}
+            />
+            <Flex direction="row" gap="lg" align="center">
+              {globalTabs.map((tab) => (
+                <Text key={tab} size="small">
+                  {tab}
+                </Text>
+              ))}
+            </Flex>
           </Flex>
           <Flex direction="row" gap="md" align="center">
-            <Text size="small">Meld skade</Text>
-            <Text size="small">Sven Hansen Østli</Text>
+            <Flex direction="row" gap="xs" align="center">
+              <ReportClaim />
+              <Text size="small">Meld skade</Text>
+            </Flex>
+            <Flex direction="row" gap="xs" align="center">
+              <Person />
+              <Text size="small">Sven Hansen Østli</Text>
+              <ChevronDown />
+            </Flex>
           </Flex>
         </Flex>
       </Box>
