@@ -25,6 +25,11 @@ export function SkadePage({ description, onDescriptionChange, onNext }: Props) {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    onNext()
+  }
+
   return (
     <Flex layout={1} gap="xl" center="xl">
       <Flex direction="row" gap="xl" layout={{ xs: 1, md: '3.9' }}>
@@ -34,7 +39,7 @@ export function SkadePage({ description, onDescriptionChange, onNext }: Props) {
           </Title>
         </Flex>
 
-        <Flex layout={1} gap="lg">
+        <Flex as="form" layout={1} gap="lg" onSubmit={handleSubmit}>
           <Box variant="blue" padding="lg">
             <FormField
               as={Input}
@@ -47,7 +52,7 @@ export function SkadePage({ description, onDescriptionChange, onNext }: Props) {
 
           <Flex layout={{ xs: 1, sm: 'auto' }} gap="sm md">
             {[
-              <Button key="next" arrow onClick={onNext}>
+              <Button key="next" type="submit" arrow>
                 Neste
               </Button>,
               <Button key="back" variant="secondary" arrow="left" disabled>

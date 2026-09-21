@@ -5,8 +5,9 @@ import { SkadePage } from './pages/SkadePage'
 import { ResultPage } from './pages/ResultPage'
 import { runInstruction } from './lib/cognigy'
 
+// NB: Kun til intern test av instruks-mekanismen – ikke for reell bruk mot kunder.
 const INSTRUCTION =
-  'Foreslå hvilken skadetype dette gjelder (f.eks. bilskade, boligskade, reiseskade, tyveri) og gi en kort oppsummering på én setning.'
+  'Svar på norsk. Gjenfortell hendelsen som en overdrevet dramatisk, teatralsk fortelling – som om det var en episode i et actionfilm eller heltesaga. Ikke gjør narr av personen, bare gjør situasjonen episk.'
 
 type View = 'skade' | 'result'
 
