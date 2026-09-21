@@ -36,7 +36,7 @@ export function TopNav() {
             </Flex>
             <Flex direction="row" gap="xs" align="center">
               <Person />
-              <Text size="small">Sven Hansen Østli</Text>
+              <Text size="small">NN</Text>
               <ChevronDown />
             </Flex>
           </Flex>
